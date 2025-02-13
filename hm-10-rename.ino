@@ -9,7 +9,7 @@
 // Commands over Serial
 // AT+NAMEname -> Sets the name of the device to 'name'
 // AT+NAME -> Returns the name of the device
-// AT -< Returns OK if everything is fine
+// AT -> Returns OK if everything is fine
 
 #include <HardwareSerial.h>
 
