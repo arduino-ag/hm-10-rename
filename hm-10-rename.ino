@@ -12,12 +12,18 @@
 // AT -> Returns OK if everything is fine
 
 #include <HardwareSerial.h>
+#include <SoftwareSerial.h>
+
+const byte rx = 50;
+const byte tx = 51;
+
+SoftwareSerial software_serial(rx, tx);
 
 void setup()
 {
-    Serial.begin(115200); // 115200 to console
+    Serial.begin(9600); // 115200 to console
     delay(500);
-    Serial1.begin(9600); // 9600 to HM10
+    software_serial.begin(9600); // 9600 to HM10
     delay(500);
 }
 
@@ -25,14 +31,15 @@ void loop()
 {
 
     char recvChar;
-    if (Serial1.available())
+    if (software_serial.available())
     {
-        recvChar = Serial1.read();
+        recvChar = software_serial.read();
         Serial.print(recvChar);
     }
-    else if (Serial.available())
+    
+    if (Serial.available())
     {
         recvChar = Serial.read();
-        Serial1.write(recvChar);
+        software_serial.write(recvChar);
     }
 }
