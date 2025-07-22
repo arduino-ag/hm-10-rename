@@ -1,8 +1,8 @@
 // infos https://forum.ardumower.de/threads/configure-the-hm-10-bluetooth-4-0-module-using-an-arduino-due-board.23860/
 // TL;DR
 // HM10 -> Arduino MEGA
-// RTX -> Pin 18
-// TXD -> Pin 19
+// RTX -> Pin 51
+// TXD -> Pin 50
 // GND -> GND
 // VCC -> 3.3V
 //
